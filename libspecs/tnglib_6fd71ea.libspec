@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="tnglib" type="library" format="ROBOT" generated="20190621 12:48:05">
+<version></version>
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``tnglib``.</doc>
+<kw name="Attach Policy">
+<arguments>
+<arg>policy_uuid</arg>
+<arg>service_uuid</arg>
+<arg>sla_uuid</arg>
+</arguments>
+<doc>Attaches a policy to a service and SLA.
+
+:param policy_uuid: uuid of a policy descriptor.
+:param service_uuid: uuid of a network service.
+:param sla_uuid: uuid of an SLA.
+
+:returns: A list. [0] is a bool with the result. [1] is a string indicating
+    the result.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Create Policy">
+<arguments>
+<arg>path</arg>
+</arguments>
+<doc>Uploads a policy descriptor.
+
+:param path: relative path where policy descriptor is stored.
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the uploaded policy descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Create Sla Template">
+<arguments>
+<arg>templateName</arg>
+<arg>nsd_uuid</arg>
+<arg>expireDate</arg>
+<arg>guaranteeId</arg>
+<arg>service_licence_type</arg>
+<arg>allowed_service_instances</arg>
+<arg>service_licence_expiration_date</arg>
+<arg>template_initiator</arg>
+<arg>provider_name</arg>
+<arg>dflavour_name=None</arg>
+</arguments>
+<doc>Generates an initial SLA template.
+
+:param templateName: name for the SLA template. 
+:param nsd_uuid: uuid of the network service.
+:param expireDate: DD/MM/YYYY expiration date.
+:param guaranteeId: id of the SLA guarantee.
+:param template_initiator: the one who creates the sla template e.g. Uprc.
+:param provider_name: the vendor on behalf of whom the sla template is generated e.g. Telefonica.
+:param dflavour_name: the mapped deployment flavor.
+:param service_licence_type: the selected license type (public|trial|private).
+:param allowed_service_instances: the allowed ns instances based on the license.
+:param service_licence_expiration_date: DD/MM/YYYY license expiration date.
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the created SLA template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Create Slice Template">
+<arguments>
+<arg>path</arg>
+</arguments>
+<doc>Creates a slice template.
+
+:param path: relative path to where the slice template is stored.
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the uploaded slice template, or an error message.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Delete Policy">
+<arguments>
+<arg>policy_uuid</arg>
+</arguments>
+<doc>Deletes a policy descriptor.
+
+:param policy_uuid: uuid of a policy descriptor.
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the terminated policy descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Delete Sla Template">
+<arguments>
+<arg>sla_template_uuid</arg>
+</arguments>
+<doc>Deletes an SLA template.
+
+:param sla_template_uuid: uuid of an SLA template.
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the terminated SLA.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Delete Slice Template">
+<arguments>
+<arg>slice_template_uuid</arg>
+</arguments>
+<doc>Deletes a specific slice template.
+
+:param slice_template_uuid: uuid of a slice template.
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the removed slice template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Agreements">
+<arguments>
+<arg>nsi_uuid=None</arg>
+</arguments>
+<doc>Returns info on all available SLA agreements.
+
+:param nsi_uuid:  (Default value = None) uuid of a service instance.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictonaries. Each dictionary contains an SLA agreement.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Detailed Agreement">
+<arguments>
+<arg>sla_uuid</arg>
+<arg>nsi_uuid</arg>
+</arguments>
+<doc>Returns info on a specific Agreement.
+
+:param sla_uuid: uuid of an SLA template.
+:param nsi_uuid: uuid of a service instance.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary
+    containing details on a single SLA agreement.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Function Descriptor">
+<arguments>
+<arg>function_descriptor_uuid</arg>
+</arguments>
+<doc>Returns info on a specific function descriptor.
+
+:param function_descriptor_uuid: uuid of the vnfd.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing the vnfd.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Function Descriptors">
+<arguments>
+</arguments>
+<doc>Returns info on all available function descriptors.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Function Instance">
+<arguments>
+<arg>function_instance_uuid</arg>
+</arguments>
+<doc>Returns info on a specific function instance.
+
+:param function_instance_uuid: uuid of the vnfr.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing a vnfr.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Function Instances">
+<arguments>
+</arguments>
+<doc>Returns info on all available function instances.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a vnfr.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Ips From Vnfr">
+<arguments>
+<arg>vnfr</arg>
+</arguments>
+<doc>Returns info on the ip addresses in a vnfr, per vdu.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary
+          with a key for each VDU. The value is a list of dictionaries.
+          Each dictionary has a type key, indicating which type of id,
+          and an ip field containing the ip.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Package">
+<arguments>
+<arg>package_uuid</arg>
+</arguments>
+<doc>Returns info on a specific package.
+
+:param package_uuid: the uuid of the package
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing a package descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Packages">
+<arguments>
+</arguments>
+<doc>Returns info on all available packages.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a package descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Policies">
+<arguments>
+</arguments>
+<doc>Returns info on all available policiy descriptors.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a policy descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Policy">
+<arguments>
+<arg>policy_uuid</arg>
+</arguments>
+<doc>Returns info on a specific policy descriptor.
+
+:param policy_uuid: uuid of a policy descriptor.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containg a policy descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Request">
+<arguments>
+<arg>request_uuid</arg>
+</arguments>
+<doc>Returns info on a specific request.
+
+:param request_uuid: A string. The uuid of the request.
+:returns: A list. [0] is a bool with the result. [1] is a dictionary
+    containing the request.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Requests">
+<arguments>
+</arguments>
+<doc>Returns info on all requests.
+
+
+:returns: A list. [0] is a bool with the result. [1] is a list of
+    dictionaries, each containing a request.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Service Descriptor">
+<arguments>
+<arg>service_descriptor_uuid</arg>
+</arguments>
+<doc>Returns info on a specific service descriptor.
+
+:param service_descriptor_uuid: uuid of the nsd.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing an nsd.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Service Descriptors">
+<arguments>
+</arguments>
+<doc>Returns info on all available service descriptors.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains an nsd.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Service Instance">
+<arguments>
+<arg>service_instance_uuid</arg>
+</arguments>
+<doc>Returns info on a specific service instance.
+
+:param service_instance_uuid: uid of nsr.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing an nsr.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Service Instances">
+<arguments>
+</arguments>
+<doc>Returns info on all available service instances.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains an nsr.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Sla Guarantees">
+<arguments>
+</arguments>
+<doc>Returns info on all available SLA guarantees.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains an SLA guarantee.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Sla Template">
+<arguments>
+<arg>sla_uuid</arg>
+</arguments>
+<doc>Returns info on all available SLA templates.
+
+:param sla_uuid: uuid of an SLA template.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containg an SLA template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Sla Templates">
+<arguments>
+</arguments>
+<doc>Returns info on all available SLA templates.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains an SLA template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Slice Instance">
+<arguments>
+<arg>slice_instance_uuid</arg>
+</arguments>
+<doc>Returns info on a specific slice instance.
+
+:param slice_instance_uuid: uuid of a slice instance.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing a slice instance record.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Slice Instances">
+<arguments>
+</arguments>
+<doc>Returns info on all slice instances.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a slice instance record.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Slice Template">
+<arguments>
+<arg>slice_template_uuid</arg>
+</arguments>
+<doc>Returns info on a specific slice template.
+
+:param slice_template_uuid: uuid of a slice template.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing a slice template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Slice Templates">
+<arguments>
+</arguments>
+<doc>Returns info on all available slice templates.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a slice template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Sp Path">
+<arguments>
+</arguments>
+<doc>Get the configured SP url.
+
+:returns: the SP url.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Descriptor">
+<arguments>
+<arg>uuid</arg>
+</arguments>
+<doc>Returns info on a specific test descriptor.
+
+:param uuid: uuid of test descriptor.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary
+    containing a test descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Descriptors">
+<arguments>
+</arguments>
+<doc>Returns info on all available test descriptors.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of
+    dictionaries. Each dictionary contains a test descriptor.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Plan">
+<arguments>
+<arg>uuid</arg>
+</arguments>
+<doc>Returns info on a specific test plan.
+
+:param uuid: uuid of test plan.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary
+    containing a test plan.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Plans">
+<arguments>
+</arguments>
+<doc>Returns info on all available test plans.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of
+    dictionaries. Each dictionary contains a result.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Result">
+<arguments>
+<arg>uuid</arg>
+</arguments>
+<doc>Returns info on a specific test result.
+
+:param uuid: uuid of test.
+
+:returns: A list. [0] is a bool with the result. [1] is a dictionary 
+    containing a test.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Results">
+<arguments>
+</arguments>
+<doc>Returns info on all available tests results.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    dictionaries. Each dictionary contains a result.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Test Uuid By Instance Uuid">
+<arguments>
+<arg>instance_uuid</arg>
+</arguments>
+<doc>Returns the test_uuid on a specific test result filtering by instance_uuid.
+:returns: A list. [0] is a bool with the result. [1] is a list of
+    dictionaries. Each dictionary contains a test_uuid.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Violations">
+<arguments>
+<arg>nsi_uuid=None</arg>
+</arguments>
+<doc>Returns info on all SLA violations.
+
+:param nsi_uuid:  (Default value = None) uuid of a service instance.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    SLA violations associated to a service instance.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Violations Per Nsi Sla">
+<arguments>
+<arg>sla_uuid</arg>
+<arg>nsi_uuid</arg>
+</arguments>
+<doc>Returns the vaiolations for a specific SLA.
+
+:param sla_uuid: uuid of SLA template.
+:param nsi_uuid: uuid of network service instance.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of 
+    SLA violations associated to a service instance and an SLA 
+    template.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Map Package On Service">
+<arguments>
+<arg>package_uuid</arg>
+</arguments>
+<doc>Return the uuid of a network service based on a package uuid.
+
+:param package_uuid: the uuid of the package
+
+:returns: A list. [0] is a bool with the result. [1] is a string 
+    containing a nsd uuid.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Remove All Packages">
+<arguments>
+</arguments>
+<doc>Removes all packages from the catalogue.
+
+:returns: A list. [0] is a bool with the result. [1] is a list of
+    uuids of packages that were removed.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Remove Package">
+<arguments>
+<arg>package_uuid</arg>
+</arguments>
+<doc>Removes one package from the catalogue.
+
+:param package_uuid: uuid of the package
+
+:returns: A list. [0] is a bool with the result. [1] is a string 
+    with either the uuid or an error message.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Service Instantiate">
+<arguments>
+<arg>service_uuid</arg>
+<arg>sla_uuid=None</arg>
+</arguments>
+<doc>Makes a request to instantiate a service.
+
+:param service_uuid: A string. The uuid of the service.
+:param sla_uuid: A string (Default value = None). The uuid of the SLA.
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the instantiated service.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Service Scale In">
+<arguments>
+<arg>instance_uuid</arg>
+<arg>vnf_uuid=None</arg>
+<arg>vnfd_uuid=None</arg>
+<arg>number_inst=1</arg>
+</arguments>
+<doc>Makes a request to scale in a service.
+
+:param instance_uuid: A string. The uuid of the service instance.
+:param vnfd_uuid: A string. the uuid of either the vnf descriptor or instance
+    that needs to be scaled in.
+:param vnf_uuid: A string. Contains the uuid of a VNF instance.
+:param number_inst: An integer. Number of required intances to scale in.
+    Only when vnfd_uuid is present.
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the request.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Service Scale Out">
+<arguments>
+<arg>instance_uuid</arg>
+<arg>vnfd_uuid</arg>
+<arg>number_inst=1</arg>
+<arg>vim_uuid=None</arg>
+</arguments>
+<doc>Makes a request to scale out a service.
+
+:param instance_uuid: A string. The uuid of the service instance.
+:param vnfd_uuid: A string. the uuid of the vnf descriptor to scale.
+:param number_inst: An integer. Number of required extra intances.
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the request.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Service Terminate">
+<arguments>
+<arg>instance_uuid</arg>
+</arguments>
+<doc>Makes a request to terminate a service.
+
+:param instance_uuid: A string. The uuid of the instance.
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the terminated instance.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Set Sp Path">
+<arguments>
+<arg>new_base_path</arg>
+</arguments>
+<doc>Set the path were the SP can be reached.
+
+:param new_base_path: SP url</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Set Timeout">
+<arguments>
+<arg>timeout_in</arg>
+</arguments>
+<doc>Set the timeout.
+
+:param timeout_in: new request timeout</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Slice Instantiate">
+<arguments>
+<arg>slice_template_uuid</arg>
+<arg>name=None</arg>
+<arg>description=None</arg>
+</arguments>
+<doc>Makes a request to instantiate a slice.
+
+:param slice_template_uuid: A string. The uuid of the slice template.
+:param name: A string (Default value = None). A name for the slice 
+    instance.
+:param description: A string (Default value = None). A description 
+    for the slice template
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the instantiated slice.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Slice Terminate">
+<arguments>
+<arg>instance_uuid</arg>
+</arguments>
+<doc>Makes a request to terminate a slice.
+
+:param instance_uuid: A string. The uuid of the slice instance.
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the terminated slice instance.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Sp Health Check">
+<arguments>
+</arguments>
+<doc>Check if SP is reachable.
+
+:returns: bool.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Upload Package">
+<arguments>
+<arg>pkg_path</arg>
+<arg>url=False</arg>
+</arguments>
+<doc>Uploads a package from file.
+
+:param pkg_path: relative path to the package that needs uploading, or url
+:param pkg_path: A bool, True if pkg_path is an url
+
+:returns: A list. [0] is a bool with the result. [1] is a string containing
+    the uuid of the uploaded package, or an error message.</doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

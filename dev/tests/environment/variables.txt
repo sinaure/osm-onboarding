@@ -1,0 +1,23 @@
+*** Variables ***
+
+${SP}=    http://qual-sp-bcn.5gtango.eu
+${VNV}=    http://pre-int-vnv-bcn.5gtango.eu
+
+${PLANNER_ENDPOINT}=    http://pre-int-vnv-bcn.5gtango.eu:6100/api/v1
+
+${GK_ENDPOINT}=     http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3
+
+${ADAPTER_ENDPOINT}=     http://pre-int-vnv-bcn.5gtango.eu:5001/adapters
+
+${OSM}=    https://10.30.0.224
+${OSM_USER}=    admin 
+${OSM_PASSWORD}=    admin
+${OSM_PROJECT_ID}=    admin
+
+${ACCEPT}         application/json
+${CONTENT_TYPE}          application/x-www-form-urlencoded
+
+${MOBIUS_NSD}     iot_mobius_nsd.yaml
+${MOBIUS_VNF_MYSQL}     mysql-vnfd/mysql_vnfd.yaml
+${MOBIUS_VNF_MOBIUS}     mobius-vnfd/iot_mobius_vnfd.yaml
+${MOBIUS_VNF_MOSQUITTO}     mosquitto-vnfd/mosquitto_vnfd.yaml

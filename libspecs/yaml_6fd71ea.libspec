@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="yaml" type="library" format="ROBOT" generated="20190621 12:48:05">
+<version>5.1</version>
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``yaml``.</doc>
+<kw name="Add Constructor">
+<arguments>
+<arg>tag</arg>
+<arg>constructor</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+</arguments>
+<doc>Add a constructor for the given tag.
+Constructor is a function that accepts a Loader instance
+and a node object and produces the corresponding Python object.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Add Implicit Resolver">
+<arguments>
+<arg>tag</arg>
+<arg>regexp</arg>
+<arg>first=None</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+</arguments>
+<doc>Add an implicit scalar detector.
+If an implicit scalar value matches the given regexp,
+the corresponding tag is assigned to the scalar.
+first is a sequence of possible initial characters or None.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Add Multi Constructor">
+<arguments>
+<arg>tag_prefix</arg>
+<arg>multi_constructor</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+</arguments>
+<doc>Add a multi-constructor for the given tag prefix.
+Multi-constructor is called for a node if its tag starts with tag_prefix.
+Multi-constructor accepts a Loader instance, a tag suffix,
+and a node object and produces the corresponding Python object.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Add Multi Representer">
+<arguments>
+<arg>data_type</arg>
+<arg>multi_representer</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+</arguments>
+<doc>Add a representer for the given type.
+Multi-representer is a function accepting a Dumper instance
+and an instance of the given data type or subtype
+and producing the corresponding representation node.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Add Path Resolver">
+<arguments>
+<arg>tag</arg>
+<arg>path</arg>
+<arg>kind=None</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+</arguments>
+<doc>Add a path based resolver for the given tag.
+A path is a list of keys that forms a path
+to a node in the representation tree.
+Keys can be string values, integers, or None.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Add Representer">
+<arguments>
+<arg>data_type</arg>
+<arg>representer</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+</arguments>
+<doc>Add a representer for the given type.
+Representer is a function accepting a Dumper instance
+and an instance of the given data type
+and producing the corresponding representation node.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Compose">
+<arguments>
+<arg>stream</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+</arguments>
+<doc>Parse the first YAML document in a stream
+and produce the corresponding representation tree.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Compose All">
+<arguments>
+<arg>stream</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+</arguments>
+<doc>Parse all YAML documents in a stream
+and produce corresponding representation trees.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Dump">
+<arguments>
+<arg>data</arg>
+<arg>stream=None</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+<arg>**kwds</arg>
+</arguments>
+<doc>Serialize a Python object into a YAML stream.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Dump All">
+<arguments>
+<arg>documents</arg>
+<arg>stream=None</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+<arg>default_style=None</arg>
+<arg>default_flow_style=False</arg>
+<arg>canonical=None</arg>
+<arg>indent=None</arg>
+<arg>width=None</arg>
+<arg>allow_unicode=None</arg>
+<arg>line_break=None</arg>
+<arg>encoding=None</arg>
+<arg>explicit_start=None</arg>
+<arg>explicit_end=None</arg>
+<arg>version=None</arg>
+<arg>tags=None</arg>
+<arg>sort_keys=True</arg>
+</arguments>
+<doc>Serialize a sequence of Python objects into a YAML stream.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Emit">
+<arguments>
+<arg>events</arg>
+<arg>stream=None</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+<arg>canonical=None</arg>
+<arg>indent=None</arg>
+<arg>width=None</arg>
+<arg>allow_unicode=None</arg>
+<arg>line_break=None</arg>
+</arguments>
+<doc>Emit YAML parsing events into a stream.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Full Load">
+<arguments>
+<arg>stream</arg>
+</arguments>
+<doc>Parse the first YAML document in a stream
+and produce the corresponding Python object.
+
+Resolve all tags except those known to be
+unsafe on untrusted input.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Full Load All">
+<arguments>
+<arg>stream</arg>
+</arguments>
+<doc>Parse all YAML documents in a stream
+and produce corresponding Python objects.
+
+Resolve all tags except those known to be
+unsafe on untrusted input.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Load">
+<arguments>
+<arg>stream</arg>
+<arg>Loader=None</arg>
+</arguments>
+<doc>Parse the first YAML document in a stream
+and produce the corresponding Python object.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Load All">
+<arguments>
+<arg>stream</arg>
+<arg>Loader=None</arg>
+</arguments>
+<doc>Parse all YAML documents in a stream
+and produce corresponding Python objects.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Load Warning">
+<arguments>
+<arg>method</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Parse">
+<arguments>
+<arg>stream</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+</arguments>
+<doc>Parse a YAML stream and produce parsing events.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Safe Dump">
+<arguments>
+<arg>data</arg>
+<arg>stream=None</arg>
+<arg>**kwds</arg>
+</arguments>
+<doc>Serialize a Python object into a YAML stream.
+Produce only basic YAML tags.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Safe Dump All">
+<arguments>
+<arg>documents</arg>
+<arg>stream=None</arg>
+<arg>**kwds</arg>
+</arguments>
+<doc>Serialize a sequence of Python objects into a YAML stream.
+Produce only basic YAML tags.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Safe Load">
+<arguments>
+<arg>stream</arg>
+</arguments>
+<doc>Parse the first YAML document in a stream
+and produce the corresponding Python object.
+
+Resolve only basic YAML tags. This is known
+to be safe for untrusted input.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Safe Load All">
+<arguments>
+<arg>stream</arg>
+</arguments>
+<doc>Parse all YAML documents in a stream
+and produce corresponding Python objects.
+
+Resolve only basic YAML tags. This is known
+to be safe for untrusted input.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Scan">
+<arguments>
+<arg>stream</arg>
+<arg>Loader=&lt;class 'yaml.loader.Loader'&gt;</arg>
+</arguments>
+<doc>Scan a YAML stream and produce scanning tokens.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Serialize">
+<arguments>
+<arg>node</arg>
+<arg>stream=None</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+<arg>**kwds</arg>
+</arguments>
+<doc>Serialize a representation tree into a YAML stream.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Serialize All">
+<arguments>
+<arg>nodes</arg>
+<arg>stream=None</arg>
+<arg>Dumper=&lt;class 'yaml.dumper.Dumper'&gt;</arg>
+<arg>canonical=None</arg>
+<arg>indent=None</arg>
+<arg>width=None</arg>
+<arg>allow_unicode=None</arg>
+<arg>line_break=None</arg>
+<arg>encoding=None</arg>
+<arg>explicit_start=None</arg>
+<arg>explicit_end=None</arg>
+<arg>version=None</arg>
+<arg>tags=None</arg>
+</arguments>
+<doc>Serialize a sequence of representation trees into a YAML stream.
+If stream is None, return the produced string instead.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Unsafe Load">
+<arguments>
+<arg>stream</arg>
+</arguments>
+<doc>Parse the first YAML document in a stream
+and produce the corresponding Python object.
+
+Resolve all tags, even those known to be
+unsafe on untrusted input.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Unsafe Load All">
+<arguments>
+<arg>stream</arg>
+</arguments>
+<doc>Parse all YAML documents in a stream
+and produce corresponding Python objects.
+
+Resolve all tags, even those known to be
+unsafe on untrusted input.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Warnings">
+<arguments>
+<arg>settings=None</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>
