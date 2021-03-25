@@ -6,7 +6,7 @@ requests
 curl-http
 
 # yaml
-PyYAML==3.13
+PyYAML==5.4
 
 # Tnglib
 git+https://github.com/sonata-nfv/tng-cli
